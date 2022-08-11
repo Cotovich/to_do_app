@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'sessions#destroy'
-    # get "/some/route" => "some_devise_controller"
   end
+
+  resources :users, only: [:show, :edit, :update]
 end

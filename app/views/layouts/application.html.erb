@@ -18,10 +18,11 @@
         <div class="cursor-pointer md:hidden block" id="menu-button">Menu</div>
         <div class="hidden w-full md:flex md:items-center md:w-auto " id="menu">
           <ul class="text-base text-gray-700 pt-4 md:flex md:justify-between md:pt-0">
-            <li>
-              <a class="md:p-4 py-2 block hover:text-purple-400" href="#">Features</a>
-            </li>
             <% if user_signed_in? %>
+              <li>
+                <!--%= button_to( "Profile", user_path, method: :get, class: "md:p-4 py-2 block hover:text-purple-400" ) %-->
+                <a class="md:p-4 py-2 block hover:text-purple-400" href="/users/<%= current_user.id %>">Profile</a>
+              </li>
               <li>
                 <%= button_to( "Sign Out", destroy_user_session_path, method: :delete, class: "md:p-4 py-2 block hover:text-purple-400" ) %>
               </li>
@@ -39,11 +40,18 @@
         </div>
       </nav>
     </header>
-    <!-- Add devise errors -->
-    <!-- p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p -->
+    <div class="<%= "hidden" if notice.nil? || alert.nil? %> flex justify-center items-center bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <span class="block sm:inline">
+        <%= notice %>
+        <%= alert %>
+      </span>
+    </div>
     <main>
-      <%= yield %>
+      <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+          <%= yield %>
+        </div>
+      </div>
     </main>
   </body>
 </html>
