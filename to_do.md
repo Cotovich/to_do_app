@@ -7,11 +7,9 @@ tasks has subtasks (self reference)
 
 -------------------------------------------------------
 
-lists
-id author_id is_active archived
-
--------------------------------------------------------
-
+- add suport for archived lists
+  - user can archive list
+  - archived lists shows in bottom of lists list under show archived button
 - nicknames must be unique (db level)
 
 ##### additional
