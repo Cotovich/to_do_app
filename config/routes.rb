@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
+  resources :lists
+  get '/new_user', to: 'unidentified_users#index'
 end

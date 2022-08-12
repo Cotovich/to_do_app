@@ -1,0 +1,11 @@
+<% unless current_user.lists.length.zero? %>
+  <div class="mt-5">
+    <% current_user.lists.each do |list| %>
+      <div class="flex justify-center">
+        <%= link_to list.name, "/lists/#{list.id}", class: "relative w-10/12 flex justify-center my-1 py-2 px-4 border border-transparent rounded-md bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500", data: { turbo: false } %><br>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="mt-5 text-center">You have not created any lists yet.</p>
+<% end %>

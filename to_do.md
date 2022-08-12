@@ -10,8 +10,6 @@ tasks has subtasks (self reference)
 lists
 id author_id is_active archived
 
-lists has many users (additional table)
-
 -------------------------------------------------------
 
 - nicknames must be unique (db level)
@@ -20,6 +18,9 @@ lists has many users (additional table)
 - create friends table
     I need to have an opportunity to connect users to each other via friends table
     has many friends (self reference through additional table)
-- friend must see friends requests
+- separate table for friendship requests
+- friend must see friendship requests
 - allow users to add friends to the lists
 - friends must be able to see lists
+
+- lists has many users (additional table)
