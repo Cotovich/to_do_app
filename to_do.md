@@ -1,16 +1,12 @@
 #### to do:
 
-tasks
-id parent_task_id list_id user_id is_active title body
 
-tasks has subtasks (self reference)
-
--------------------------------------------------------
-
+- add tasks output
 - add suport for archived lists
   - user can archive list
   - archived lists shows in bottom of lists list under show archived button
 - nicknames must be unique (db level)
+- change mobile menu button from pure js to stimulus controller
 
 ##### additional
 - create friends table

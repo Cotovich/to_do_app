@@ -1,0 +1,10 @@
+<% tasks.each do |task| %>
+  <div class="">
+    <%= task.title %>
+    <% unless task.body.nil? %>
+      <p class="ml-3"> 
+        <%= task.body[..10] %><%= '...' if task.body.length > 10  %>
+      </p>
+    <% end %>
+  </div>
+<% end %>

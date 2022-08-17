@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
   resources :lists
+  resources :tasks
   get '/new_user', to: 'unidentified_users#index'
 end
