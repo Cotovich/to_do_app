@@ -1,5 +1,5 @@
-<%= form_with(url: "/tasks", method: "POST", data: { turbo_frame: "tasks" }) do |form| %>
-  <%= form.hidden_field :list, value: @list.id %> <!-- Добавить передачу сюда текущего активного списка, отправлять при создании -->
+<%= form_with(url: "/tasks", method: "POST", data: { turbo_frame: "tasks", controller: "form-reset", action: "turbo:submit-end->form-reset#reset" }) do |form| %>
+  <%= form.hidden_field :list_id, value: @list.id %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.label :name, class: "sr-only" %>
   <%= form.text_field :name, class: "appearance-none rounded-lg relative block w-full px-3 py-2 mb-6 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm", placeholder: "Task name" %>
